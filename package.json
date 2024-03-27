@@ -24,8 +24,8 @@
   },
   "license": "MIT",
   "author": "155259966@qq.com",
-  "main": "./lib/index",
-  "module": "./es/index",
+  "main": "lib/index",
+  "module": "es/index",
   "files": [
     "lib",
     "assets/*.css",
