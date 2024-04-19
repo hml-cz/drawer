@@ -13,6 +13,7 @@ export interface DrawerProps extends Omit<DrawerPopupProps, 'prefixCls' | 'inlin
     panelRef?: React.Ref<HTMLDivElement>;
     classNames?: DrawerClassNames;
     styles?: DrawerStyles;
+    isDraggable?: boolean;
 }
 declare const Drawer: React.FC<DrawerProps>;
 export default Drawer;

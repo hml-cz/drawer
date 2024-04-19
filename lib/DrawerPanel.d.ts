@@ -22,6 +22,7 @@ export interface DrawerPanelProps extends DrawerPanelEvents, DrawerPanelAccessib
     style?: React.CSSProperties;
     children?: React.ReactNode;
     containerRef?: React.Ref<HTMLDivElement>;
+    isDraggable?: boolean;
 }
 declare const DrawerPanel: {
     (props: DrawerPanelProps): React.JSX.Element;

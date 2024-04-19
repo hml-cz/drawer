@@ -28,6 +28,7 @@ export interface DrawerProps
   panelRef?: React.Ref<HTMLDivElement>;
   classNames?: DrawerClassNames;
   styles?: DrawerStyles;
+  isDraggable?: boolean;
 }
 
 const Drawer: React.FC<DrawerProps> = props => {

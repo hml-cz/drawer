@@ -42,6 +42,7 @@ export interface DrawerPanelProps
   style?: React.CSSProperties;
   children?: React.ReactNode;
   containerRef?: React.Ref<HTMLDivElement>;
+  isDraggable?: boolean;
 }
 
 const DrawerPanel = (props: DrawerPanelProps) => {
@@ -52,6 +53,7 @@ const DrawerPanel = (props: DrawerPanelProps) => {
     placement,
     drawerWidth,
     onClose,
+    isDraggable = false,
     ...restProps
   } = props;
 
@@ -66,6 +68,7 @@ const DrawerPanel = (props: DrawerPanelProps) => {
       // cancel drag to right if Drawer has left placement,
       // and cancel drag to left for right Drawer
       if (
+        isDraggable === false ||
         (placement === 'left' && directionX === 1) ||
         (placement === 'right' && directionX === -1)
       ) {

@@ -1,7 +1,7 @@
 import _extends from "@babel/runtime/helpers/esm/extends";
 import _slicedToArray from "@babel/runtime/helpers/esm/slicedToArray";
 import _objectWithoutProperties from "@babel/runtime/helpers/esm/objectWithoutProperties";
-var _excluded = ["prefixCls", "className", "containerRef", "placement", "drawerWidth", "onClose"];
+var _excluded = ["prefixCls", "className", "containerRef", "placement", "drawerWidth", "onClose", "isDraggable"];
 import classNames from 'classnames';
 import * as React from 'react';
 import { useSpring, animated } from '@react-spring/web';
@@ -16,6 +16,8 @@ var DrawerPanel = function DrawerPanel(props) {
     placement = props.placement,
     drawerWidth = props.drawerWidth,
     onClose = props.onClose,
+    _props$isDraggable = props.isDraggable,
+    isDraggable = _props$isDraggable === void 0 ? false : _props$isDraggable,
     restProps = _objectWithoutProperties(props, _excluded);
   var _React$useContext = React.useContext(RefContext),
     panelRef = _React$useContext.panel;
@@ -42,7 +44,7 @@ var DrawerPanel = function DrawerPanel(props) {
       cancel = _ref.cancel;
     // cancel drag to right if Drawer has left placement,
     // and cancel drag to left for right Drawer
-    if (placement === 'left' && directionX === 1 || placement === 'right' && directionX === -1) {
+    if (isDraggable === false || placement === 'left' && directionX === 1 || placement === 'right' && directionX === -1) {
       cancel();
     }
     if (Math.abs(movementX) < drawerWidth / 2) {
