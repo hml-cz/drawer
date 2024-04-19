@@ -20,12 +20,15 @@ export interface DrawerProps
     DrawerPanelAccessibility {
   prefixCls?: string;
   open?: boolean;
-  onClose?: (e: React.MouseEvent | React.KeyboardEvent) => void;
+  onClose?: (
+    e: React.MouseEvent | React.KeyboardEvent | CustomEvent<HTMLElement>,
+  ) => void;
   destroyOnClose?: boolean;
   getContainer?: PortalProps['getContainer'];
   panelRef?: React.Ref<HTMLDivElement>;
   classNames?: DrawerClassNames;
   styles?: DrawerStyles;
+  isDraggable?: boolean;
 }
 
 const Drawer: React.FC<DrawerProps> = props => {
